@@ -67,7 +67,7 @@ status token.
 Invalid status tokens include:
 - PASS(J)
 - PASS (J)
-- PASS???
+- PASS†
 - P(B)
 - UNK
 - COND
