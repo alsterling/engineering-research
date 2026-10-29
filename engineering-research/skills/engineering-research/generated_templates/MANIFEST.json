@@ -1,0 +1,174 @@
+{
+  "generator": "engineering-research-v0.4/packaging/scripts/generate_templates.py",
+  "source": {
+    "path": "engineering-research-v0.4/legacy/SKILL_v0.4_monolith.md",
+    "sha256": "adcc1c99f7eea100e67e1e288eaa59aff19735feb7cb76bf52991b98771dba8a"
+  },
+  "post_freeze_projection": {
+    "changes": [
+      "PF-05",
+      "PF-11",
+      "PF-19"
+    ],
+    "projected_source_sha256": "56bdd989b539aaa6fd86cd87c836bd751306086c34f07cbb010dbba0c0c67193",
+    "note": "frozen source + these declared post-freeze segment edits, applied in memory; the source file is unchanged; templates marked post_freeze_projection are rendered from it"
+  },
+  "note": "generated; regenerate with --generate, verify with --check",
+  "templates": [
+    {
+      "file": "spec-requirement.md",
+      "title": "SPEC requirement",
+      "canonical_contracts": [
+        "# 2 - SPEC, \"Each requirement must contain\""
+      ],
+      "field_count": 10,
+      "sha256": "a320f05cb4ce83f517bd8d164f3d714d55708c1b2d82008c3bdbbf32cd96d0e1"
+    },
+    {
+      "file": "discovery-packet.md",
+      "title": "DISCOVERY_PACKET / DISCOVERY_LOG",
+      "canonical_contracts": [
+        "## DISCOVERY ROUTE, \"Record in DISCOVERY_LOG\"",
+        "## DISCOVERY_PACKET, \"For every plausible family/configuration record\""
+      ],
+      "field_count": 14,
+      "sha256": "88ec1c2836ac90ba8897212b631c3b3e7f447976af34e20dee461b6fcd3b2a5b"
+    },
+    {
+      "file": "evidence-table-row.md",
+      "title": "EVIDENCE_TABLE row (HARD requirement)",
+      "canonical_contracts": [
+        "# 4 - EXTRACT, \"For each HARD requirement, record\"",
+        "## HUMAN-SUPPLIED EVIDENCE, \"For human-supplied evidence used for a HARD requirement, record\"",
+        "## CERTIFICATION EVIDENCE AUTHORITY, \"Record the authority class\"; ## DOCUMENT STATES, \"Record the state\" and \"could determine whether the predicate is satisfied\""
+      ],
+      "field_count": 29,
+      "sha256": "ce749c7ad505ed5e9a43e355943f9a263741110b0270923226bb358e8c3f041f"
+    },
+    {
+      "file": "soft-evidence.md",
+      "title": "SOFT_EVIDENCE row",
+      "canonical_contracts": [
+        "# 7 - SOFT ENRICH, ## Scope"
+      ],
+      "field_count": 12,
+      "sha256": "aa76c4304041b7f32a447d78acec484eec0789caabe78a2383f8b42e3645e153"
+    },
+    {
+      "file": "decision-memo.md",
+      "title": "DECISION_MEMO",
+      "canonical_contracts": [
+        "# 8 - DECISION MEMO, \"MEMO contains\""
+      ],
+      "field_count": 13,
+      "sha256": "396bd74324038c757fbec93209c51df19f3311fda44686e238812b03bc4f88fe",
+      "post_freeze_projection": [
+        "PF-05",
+        "PF-11",
+        "PF-19"
+      ]
+    },
+    {
+      "file": "none-found-summary.md",
+      "title": "NONE_FOUND_SUMMARY",
+      "canonical_contracts": [
+        "## NONE FOUND SUMMARY, summary fields",
+        "## NONE FOUND SUMMARY, \"Blocker record\""
+      ],
+      "field_count": 15,
+      "sha256": "c44285494ab17417a6444f48b2af5714d7bf80f5fbe2b1fd46544ccb76acefad"
+    },
+    {
+      "file": "critic-brief.md",
+      "title": "CRITIC_BRIEF",
+      "canonical_contracts": [
+        "## RUN MODE - CRITIC HANDOFF, item 2",
+        "## CRITIC INDEPENDENCE, \"The CRITIC_BRIEF also states\"",
+        "## JOB 2 ELIGIBILITY, \"identity ledger\"",
+        "## CRITIC_RESULT CONTRACT, Run identity",
+        "## CRITIC_RESULT CONTRACT, JOB 1",
+        "## CRITIC_RESULT CONTRACT, JOB 2",
+        "## CRITIC_RESULT CONTRACT, Enforcement fields",
+        "## CRITIC_RESULT CONTRACT, Evidence references",
+        "## CRITIC INDEPENDENCE, \"Record with the CRITIC_RESULT\""
+      ],
+      "field_count": 49,
+      "sha256": "6f51a62a613041be988738ace78e5da96949eea4bb7ad642e389a53b5fbbfcb3",
+      "post_freeze_projection": [
+        "PF-05",
+        "PF-11",
+        "PF-19"
+      ]
+    },
+    {
+      "file": "critic-result.md",
+      "title": "CRITIC_RESULT",
+      "canonical_contracts": [
+        "## CRITIC_RESULT CONTRACT, Run identity",
+        "## CRITIC_RESULT CONTRACT, JOB 1",
+        "## CRITIC_RESULT CONTRACT, JOB 2",
+        "## CRITIC_RESULT CONTRACT, Enforcement fields",
+        "## CRITIC_RESULT CONTRACT, Evidence references",
+        "## CRITIC INDEPENDENCE, \"Record with the CRITIC_RESULT\""
+      ],
+      "field_count": 32,
+      "sha256": "1c7502e55648b9b3b5e6a625d761ac3b1b6ab9bf3e86073efcf33e464daebf63",
+      "post_freeze_projection": [
+        "PF-05",
+        "PF-11",
+        "PF-19"
+      ]
+    },
+    {
+      "file": "propagation-record.md",
+      "title": "Propagation record (CRITIC FINDING PROPAGATION)",
+      "canonical_contracts": [
+        "## CRITIC FINDING PROPAGATION, \"Propagation record\""
+      ],
+      "field_count": 11,
+      "sha256": "643333696870f214901a1db79a9d23c3a1801ee744f52b91166176e15a326f9e"
+    },
+    {
+      "file": "verify-action.md",
+      "title": "VERIFY ACTION record",
+      "canonical_contracts": [
+        "## POST-CRITIC VERIFY ACTION, \"VERIFY ACTION record\""
+      ],
+      "field_count": 19,
+      "sha256": "fb91bd1caa80fc1c6ad2208e3547d207abcd25b1b17d134bda9521820e2fbd69"
+    },
+    {
+      "file": "retrieval-fallback.md",
+      "title": "RETRIEVAL_FALLBACK record",
+      "canonical_contracts": [
+        "## RETRIEVAL FALLBACK, \"RETRIEVAL_FALLBACK record\""
+      ],
+      "field_count": 17,
+      "sha256": "1d6508d0f1a5386f05c10c691d82d445d91d4777891ed12512cdafc22aec5612"
+    },
+    {
+      "file": "budget-ledger-entry.md",
+      "title": "BUDGET_LEDGER entry",
+      "canonical_contracts": [
+        "# BUDGET CONTRACT, \"Pre-action check and BUDGET_LEDGER\"",
+        "# BUDGET CONTRACT, \"record a revision\""
+      ],
+      "field_count": 16,
+      "sha256": "762282c78d8bd066c462c17c2dcf4d08535c4c80c7390d8e267f73bc79f7a201",
+      "post_freeze_projection": [
+        "PF-05",
+        "PF-11",
+        "PF-19"
+      ]
+    },
+    {
+      "file": "run-log.md",
+      "title": "RUN_LOG (fallback fields)",
+      "canonical_contracts": [
+        "# RUN LOG, \"Fallback fields\""
+      ],
+      "field_count": 15,
+      "sha256": "568ec32103f5d6762203a8d30e257dcfc069241807c05cac96663bb6b2dfc3c1"
+    }
+  ]
+}

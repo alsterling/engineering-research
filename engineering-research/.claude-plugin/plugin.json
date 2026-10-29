@@ -1,0 +1,18 @@
+{
+  "name": "engineering-research",
+  "version": "0.5.0-alpha.1",
+  "description": "Gated, evidence-graded engineering product-selection research (RUN skill) with an isolated independent critic (CRITIC skill). Runtime: frozen Engineering Research v0.5 RC3. Public/synthetic T0 information only.",
+  "author": {
+    "name": "alsterling"
+  },
+  "homepage": "https://github.com/alsterling/engineering-research",
+  "repository": "https://github.com/alsterling/engineering-research",
+  "license": "Apache-2.0",
+  "keywords": [
+    "engineering",
+    "component-selection",
+    "research",
+    "evidence",
+    "critic"
+  ]
+}
