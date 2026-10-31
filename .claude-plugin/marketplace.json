@@ -4,14 +4,14 @@
     "name": "alsterling"
   },
   "metadata": {
-    "description": "Engineering Research Public Alpha: one Claude Code plugin with the RUN and CRITIC skills."
+    "description": "Engineering Research Public Alpha: one Claude Code plugin; engineering-selector is the entry point."
   },
   "plugins": [
     {
       "name": "engineering-research",
       "source": "./engineering-research",
-      "description": "Gated, evidence-graded engineering product-selection research (RUN skill) with an isolated independent critic (CRITIC skill). Runtime: frozen Engineering Research v0.5 RC3.",
-      "version": "0.5.0-alpha.1",
+      "description": "Engineering selection assistant with one entry point (engineering-selector): problem routing, design review, gated evidence-graded product research and an independent critic. Research runtime: frozen Engineering Research v0.5 RC3.",
+      "version": "0.6.0-alpha.1",
       "license": "Apache-2.0"
     }
   ]

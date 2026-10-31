@@ -1,0 +1,126 @@
+{
+  "registry_format": "1.0",
+  "description": "Engineering Research Capability Registry V1. Known capabilities only: every entry is something this project has built, tested or released. Nothing here is installed or connected automatically; the resolver only recommends.",
+  "last_updated": "2026-10-29",
+  "entries": [
+    {
+      "id": "engineering-research",
+      "name": "Engineering Research (RUN skill)",
+      "type": "skill",
+      "purpose": "Governed, evidence-graded engineering product/component selection research: draft SPEC and stop at G1, discover candidates, grade evidence per requirement, lanes, SOFT ranking, DECISION_MEMO, CRITIC_BRIEF handoff, apply CRITIC_RESULT, stop at G2.",
+      "status": "released",
+      "source": {
+        "location": "github:alsterling/engineering-research",
+        "path": "engineering-research/skills/engineering-research",
+        "ref": "v0.5.0-alpha.1"
+      },
+      "install": {
+        "method": "plugin",
+        "instructions": "claude plugin marketplace add alsterling/engineering-research; claude plugin install engineering-research@engineering-research-marketplace"
+      },
+      "capabilities": [
+        "engineering-product-selection",
+        "requirements-spec-drafting",
+        "candidate-discovery",
+        "evidence-graded-requirement-check",
+        "soft-preference-ranking",
+        "decision-memo",
+        "critic-handoff",
+        "human-gated-workflow"
+      ],
+      "limitations": [
+        "Selection-dominant: does not do design, sizing, physics or field/design expert work (Problem Router / Field-Design Expert is P4, not started).",
+        "Public or synthetic T0 information only; no confidential, export-controlled or customer data.",
+        "Does not certify, approve or guarantee a product; a qualified engineer makes the selection.",
+        "Never performs CRITIC mode; the critic must run in a separate fresh session.",
+        "Discovery depends on the web search/fetch tools of the host session."
+      ],
+      "trust": "Runtime v0.5 RC3 (tag engineering-research-v0.5-rc3, f3a86fe): full model qualification PASS, 27 cases / 85 runs, pass^k = 1.0. Public Alpha v0.5.0-alpha.1, release commit a7dfbbc2be82bd8ace40c13342a0d0839ce17a4d, clean install PASS, runtime integrity 38/38. Frozen: do not modify.",
+      "last_reviewed": "2026-10-29"
+    },
+    {
+      "id": "engineering-research-critic",
+      "name": "Engineering Research Critic (CRITIC skill)",
+      "type": "skill",
+      "purpose": "Independent critic for an Engineering Research run: from a CRITIC_BRIEF only, Job 1 attacks the leading candidate and Job 2 checks one missed product family; returns a CRITIC_RESULT with advisory C1-C4 and an outcome label.",
+      "status": "released",
+      "source": {
+        "location": "github:alsterling/engineering-research",
+        "path": "engineering-research/skills/engineering-research-critic",
+        "ref": "v0.5.0-alpha.1"
+      },
+      "install": {
+        "method": "plugin",
+        "instructions": "Installed with the engineering-research plugin: claude plugin marketplace add alsterling/engineering-research; claude plugin install engineering-research@engineering-research-marketplace"
+      },
+      "capabilities": [
+        "independent-critic-review",
+        "missed-family-check"
+      ],
+      "limitations": [
+        "Only reviews an Engineering Research CRITIC_BRIEF; not a general-purpose design or document reviewer.",
+        "Must run in a fresh session; a sub-agent, fork or resumed conversation is not independent.",
+        "Critic labels are advisory; the RUN skill and the human apply them.",
+        "Public or synthetic T0 information only."
+      ],
+      "trust": "Same qualification and release as engineering-research (RC3 PASS, Public Alpha v0.5.0-alpha.1, runtime integrity 38/38). Frozen: do not modify.",
+      "last_reviewed": "2026-10-29"
+    },
+    {
+      "id": "er-core",
+      "name": "er-core deterministic checks",
+      "type": "internal_tool",
+      "purpose": "Deterministic mechanical rule enforcement for Engineering Research v0.5 artifacts: canonical schemas, lanes and gates, HARD PASS traceability, C1-C4 and outcome label, supersession, SOFT ordering, exact unit conversion, repository hygiene lint.",
+      "status": "available",
+      "source": {
+        "location": "github:alsterling/Engineering_Research_MVP",
+        "path": "er-core",
+        "ref": "phase1-public-alpha-packaging"
+      },
+      "install": {
+        "method": "repo_checkout",
+        "instructions": "Use from a checkout of the development repository with standard-library Python 3.10+: python er-core/tools/er_check.py --spec SPEC.json --check CHECK_RESULT.json"
+      },
+      "capabilities": [
+        "deterministic-artifact-validation",
+        "critic-outcome-computation",
+        "engineering-unit-conversion",
+        "text-hygiene-lint"
+      ],
+      "limitations": [
+        "Encodes no rule of its own; only rules that exist in the Engineering Research rule base.",
+        "Does not judge applicability, predicate satisfaction or whether a critic finding is right.",
+        "Not part of the Public Alpha plugin; development repository only."
+      ],
+      "trust": "Internal tool, 138 deterministic tests passing on the Public Alpha development state; standard library only, no network.",
+      "last_reviewed": "2026-10-29"
+    },
+    {
+      "id": "capability-resolver",
+      "name": "Capability Resolver V1.1",
+      "type": "skill",
+      "purpose": "Decide USE / INTEGRATE / SEARCH_REQUIRED / BUILD for a requested capability from this registry and recorded search evidence, so nothing is custom-built when an existing capability suffices.",
+      "status": "available",
+      "source": {
+        "location": "github:alsterling/Engineering_Research_MVP",
+        "path": "skills/capability-resolver",
+        "ref": "phase2-capability-resolver-v1"
+      },
+      "install": {
+        "method": "repo_checkout",
+        "instructions": "Use from a checkout of the development repository: python skills/capability-resolver/scripts/resolver.py --request REQUEST.json"
+      },
+      "capabilities": [
+        "capability-registry-lookup",
+        "build-vs-reuse-decision"
+      ],
+      "limitations": [
+        "Knows only what is in this registry and in the evidence given to it; external discovery adapters (so far GitHub search) return UNREVIEWED candidates that need human review before the resolver uses them.",
+        "Exact capability-tag matching only; no fuzzy or semantic matching.",
+        "Never installs or connects anything."
+      ],
+      "trust": "P2 complete (Resolver V1.1): deterministic tests pass; real-world validation PASS on PUMP-001 (capability-registry/validation/PUMP-001/). Not model-qualified; not published publicly.",
+      "last_reviewed": "2026-10-29"
+    }
+  ]
+}
